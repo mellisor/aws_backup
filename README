@@ -6,7 +6,8 @@ To set up:
 
 To upload:
 
-1. Run upload.py as superuser. Make sure python3 is used
+1. Specify directories to upload as well as file prefixes to exclude in backup.conf
+2. Run upload.py as superuser. Make sure python3 is used
 
 To decrypt:
 
