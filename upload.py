@@ -62,20 +62,19 @@ do_tar(out_file)
 enc_file = out_file + '.enc'
 public_key = conf.get('KEY','public_key')
 
-with open('/var/log/cron.txt','w+') as f:
-    with open(enc_file,'wb') as enc:
-        recip_key = RSA.import_key(open(public_key).read())
-        session_key = get_random_bytes(16)
-        cipher_rsa = PKCS1_OAEP.new(recip_key)
-        enc.write(cipher_rsa.encrypt(session_key))
-        cipher_aes = AES.new(session_key, AES.MODE_EAX)
-        data = b''
-        with open(out_file,'rb') as e:
-            data = e.read()
-        ciphertext,tag = cipher_aes.encrypt_and_digest(data)
-        enc.write(cipher_aes.nonce)
-        enc.write(tag)
-        enc.write(ciphertext)
+with open(enc_file,'wb') as enc:
+    recip_key = RSA.import_key(open(public_key).read())
+    session_key = get_random_bytes(16)
+    cipher_rsa = PKCS1_OAEP.new(recip_key)
+    enc.write(cipher_rsa.encrypt(session_key))
+    cipher_aes = AES.new(session_key, AES.MODE_EAX)
+    data = b''
+    with open(out_file,'rb') as e:
+        data = e.read()
+    ciphertext,tag = cipher_aes.encrypt_and_digest(data)
+    enc.write(cipher_aes.nonce)
+    enc.write(tag)
+    enc.write(ciphertext)
 
 """           END         """
 
