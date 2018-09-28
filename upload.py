@@ -7,7 +7,7 @@ import os
 import configparser
 import json
 import datetime
-# For encryption, insert path of Crypto library
+# For encryption
 from Crypto.PublicKey import RSA
 from Crypto.Random import get_random_bytes
 from Crypto.Cipher import AES, PKCS1_OAEP
