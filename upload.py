@@ -1,5 +1,3 @@
-#!/usr/bin/env python3.6
-
 import boto3
 import sys
 import tarfile
