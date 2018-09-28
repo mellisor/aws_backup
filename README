@@ -1,0 +1,15 @@
+To set up:
+
+1. Run setup.sh
+2. If new keys are needed, run genkeys.py. Otherwise, place necessary keys in the 'keys' directory.
+   Only the public key is needed for encryption
+
+To upload:
+
+1. Run upload.py as superuser. Make sure python3 is used
+
+To decrypt:
+
+1. Run decrypt.py /path/to/file (OPTIONAL: use -p to specify passphrase or -k to specify key path. 
+   Otherwise, defaults in backup.conf are used)
+
