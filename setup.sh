@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt-get install python3-pip
 sudo pip3 install pycryptodome
 sudo pip3 install boto3

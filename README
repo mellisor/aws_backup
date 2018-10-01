@@ -3,6 +3,8 @@ To set up:
 1. Run setup.sh
 2. If new keys are needed, run genkeys.py. Otherwise, place necessary keys in the 'keys' directory.
    Only the public key is needed for encryption
+3. Update AWS_ACCESS_KEY and AWS_SECRET_ACCESS_KEY variables in backup.conf
+4. Update bucket and host names in backup.conf
 
 To upload:
 
